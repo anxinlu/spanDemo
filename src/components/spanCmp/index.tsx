@@ -1,9 +1,10 @@
 import { computed, defineComponent, onMounted, ref } from 'vue'
+
 import styles from './index.module.scss'
 
 export default defineComponent({
   name: 'spanCmp',
-  setup(props, ctx) {
+  setup() {
     const renderSpan = computed(() =>
       new Array(10).fill(Math.random() * 100).map((index) => (
         <span contenteditable="false" style={{ outline: 'none' }}>
@@ -16,7 +17,7 @@ export default defineComponent({
 
     const dragOver = (e: Event & { dataTransfer: any; currentTarget: any }) => {
       const target = e.target as HTMLElement
-      let data = {
+      const data = {
         id: e.currentTarget!.dataset.id, //获取自定义属性id
         src: e.currentTarget!.src
       }

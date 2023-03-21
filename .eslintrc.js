@@ -1,26 +1,32 @@
+/*
+ * @Descripttion: es规则
+ * @version: 1.0.0
+ * @Author: 吴文周
+ * @Date: 2021-01-14 09:56:31
+ * @LastEditors: 吴文周
+ * @LastEditTime: 2022-07-06 14:34:35
+ */
 module.exports = {
+  root: true,
   env: {
-    browser: true,
-    es2021: true
+    node: true
   },
-  extends: [
-    'plugin:vue/vue3-essential',
-    'standard-with-typescript'
-  ],
-  overrides: [
-  ],
+  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/typescript/recommended'],
+  plugins: ['import'],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      tsx: true,
+      jsx: true
+    }
   },
-  plugins: [
-    'vue'
-  ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
@@ -34,31 +40,26 @@ module.exports = {
           'internal',
           ['index', 'sibling', 'parent'],
           'object',
-          'type',
+          'type'
         ],
         pathGroups: [
           {
             pattern: '@/**',
             group: 'internal',
-            position: 'after',
-          },
+            position: 'after'
+          }
         ],
-        'newlines-between': 'always',
-      },
+        'newlines-between': 'always'
+      }
     ],
-    'vue/no-setup-props-destructure': 'off',
+    'vue/no-setup-props-destructure': 'off'
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
-        jest: true,
-      },
-    },
-  ],
-    
+        jest: true
+      }
+    }
+  ]
 }
-
