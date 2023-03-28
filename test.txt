@@ -1,5 +1,3 @@
 test hard
 
 git reset --hard 会导致暂存区和本地库都还有指针都回滚到制定commitid的地方
-
-haha
