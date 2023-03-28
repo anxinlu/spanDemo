@@ -1,0 +1,44 @@
+// 全局字体大小
+@for $i from 1 through 100 {
+    .font-#{$i} {
+        font-size: 1px * $i;
+    }
+}
+
+// 全局颜色
+$grayBlack: #333333;
+$pureWhite: #ffffff;
+
+// 混入宽高方法
+@mixin divWH($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// 全局flex row 水平居中对齐
+@mixin flexRow ($alignItems: center, $justifyContent: center) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+// 全局flex column 垂直居中对齐
+@mixin flexCol ($alignItems: center, $justifyContent: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+// 全局颜色
+// 全局表单样式 
+// 全局分页
+
+/* 辅助表达式弹框大小 */
+.drag-express {
+    position: fixed;
+    z-index: 1000;
+    @include divWH(60%, 90%);
+    background-color: #ffffff;
+}

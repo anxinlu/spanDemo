@@ -1,0 +1,94 @@
+/* home css */
+/* 全局css 初始化配置 */
+*,:after,:before{
+    margin: 0;
+    padding: 0;
+}
+div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a{
+    border:0;
+}
+div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,ol,ul,li,th,td,p,span,a {
+    font-family: 'Microsoft YaHei';
+
+}
+img,input{
+    border:none;vertical-align:middle;
+}
+ul,ol{
+    list-style-type:none;
+}
+.cursor {
+    cursor: pointer;
+}
+.cursor-default {
+    cursor: default;
+}
+.disable-hover {
+    pointer-events: none
+}
+.success-row {
+    background-color: #F2F8FF !important;
+}
+/* elementUI 样式 */
+.el-header {
+    --el-header-height: auto
+}
+.el-message-box__btns {
+    justify-content: space-around;
+}
+
+
+.el-button.is-text {
+    color: #1c54bf;
+}
+
+.el-dialog__title {
+    font-weight: bold;
+}
+.el-form-item__label {
+    font-weight: bold;
+}
+.el-dialog {
+    border-radius: 10px;
+}
+.cell .el-form-item {
+    display: flex;
+}
+th .cell {
+    font-weight: bold;
+    color: #000;
+}
+.black-content-10 .el-form-item__label {
+    margin-left: 10px;
+}
+
+/* 弹窗中全局样式 */
+.dialog-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* 修改右侧悬浮样式 */
+.el-select .el-input .el-input__wrapper .el-input__prefix {
+    opacity: 0;
+    position: absolute;
+}
+
+.el-popover.el-popper.selectbox-popover {
+    padding: 0 !important;
+}
+/* 引用关系提示 */
+.hasReferenced {
+    color: var(--el-color-danger);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+}
+.hasReferenced .hasReferenced-y {
+    color: #409eff;
+    margin-left:10px;
+    cursor: pointer;
+}
